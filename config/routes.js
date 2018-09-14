@@ -22,7 +22,7 @@ function register(req, res) {
       const id = ids[0];
 
       db('users')
-        .where([ id ])
+        .where({ id })
         .first()
         .then(user => {
           const token = generateToken(user);
